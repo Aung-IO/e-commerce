@@ -1,7 +1,12 @@
+import ProjectCard from '@/componentsproject-card'
 import React from 'react'
 
 export default function page() {
   return (
-    <div>Inspiration</div>
+    <div className='flex flex-col lg:flex-row items-center justify-center gap-10'>
+      <ProjectCard/>
+      <ProjectCard/>
+      <ProjectCard/>
+    </div>
   )
 }

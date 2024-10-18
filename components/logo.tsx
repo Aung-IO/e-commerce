@@ -10,9 +10,9 @@ export default function Logo() {
         <Link href={"/inspiration"} className="flex items-center">
           <Image
             src={
-              resolvedTheme === "light" || !resolvedTheme
-                ? "/logo_dark.svg"
-                : "/logo_light.svg"
+              resolvedTheme === "dark" || !resolvedTheme
+                ? "/logo_light.svg"
+                : "/logo_dark.svg"
             }
             alt="logo"
             className="w-[35px] h-[35px]"
