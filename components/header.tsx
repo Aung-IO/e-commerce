@@ -19,7 +19,7 @@ export default function Header() {
   const pathname = usePathname()
   return (
     <header className='flex justify-between items-center px-7 py-4 border-b'>
-      <Link href={'/'} className='flex items-center'>
+      <Link href={'/inspiration'} className='flex items-center'>
         <Image src={'spotlight_logo.svg'}
           alt='logo' className='w-[35px] h-[35px]' width={35} height={35} />
           <span className='font-mono text-xl'>CodeDam</span>
