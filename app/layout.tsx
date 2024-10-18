@@ -1,9 +1,10 @@
+import Container from "@/components/container";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Container from "@/components/container";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,11 +34,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} flex flex-col min-h-screen`}
       >
-        <Header />
-         <Container>
-         {children}
-         </Container>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+        >
+
+          <Header />
+          <Container>
+            {children}
+          </Container>
           <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
