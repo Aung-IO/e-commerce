@@ -1,9 +1,9 @@
 "use client";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ModeToggle } from "./mode-toggle";
-import { useTheme } from "next-themes";
 
 const navLinks = [
   {
@@ -24,9 +24,9 @@ export default function Header() {
       <Link href={"/inspiration"} className="flex items-center">
         <Image
           src={
-            resolvedTheme === "light" || !resolvedTheme
-              ? "/logo_dark.svg"
-              : "/logo_light.svg"
+            resolvedTheme === "dark" || !resolvedTheme
+              ? "/logo_light.svg"
+              : "/logo_dark.svg"
           }
           alt="logo"
           className="w-[35px] h-[35px]"

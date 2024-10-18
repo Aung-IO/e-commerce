@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
 import { useTheme } from "next-themes"
 
@@ -15,7 +14,7 @@ export function ModeToggle() {
 
     return (
         <Toggle
-        pressed={theme === 'dark'}
+        pressed={theme === 'light'}
         onPressedChange={toggleTheme}
         aria-label="Toggle theme"
         className="p-2"
