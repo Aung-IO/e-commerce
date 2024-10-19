@@ -1,3 +1,5 @@
+import AddPost from '@/componentsadd-post'
+import FloatingButton from '@/componentsfloating-button'
 import ProjectCard from '@/componentsproject-card'
 import React from 'react'
 
@@ -7,6 +9,8 @@ export default function page() {
       <ProjectCard/>
       <ProjectCard/>
       <ProjectCard/>
+
+     <FloatingButton/>
     </div>
   )
 }

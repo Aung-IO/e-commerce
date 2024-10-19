@@ -1,5 +1,6 @@
 
 
+import AddPost from "./add-post";
 import Logo from "./logo";
 import { ModeToggle } from "./mode-toggle";
 import NavLinks from "./nav-links";
@@ -13,8 +14,11 @@ export default function Header() {
       <NavLinks />
       <div className="flex items-center gap-5">
         <div className="hidden lg:inline-block">
-
         <ModeToggle />
+        </div>
+        <div className="hidden lg:inline-block">
+
+        <AddPost/>
         </div>
         <SignIn />
       </div>
