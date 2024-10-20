@@ -1,12 +1,15 @@
 
 
+import { auth } from "@/auth";
 import AddPost from "./add-post";
 import Logo from "./logo";
 import { ModeToggle } from "./mode-toggle";
 import NavLinks from "./nav-links";
 import SignIn from "./sign-in";
 
-export default function Header() {
+export default async function Header() {
+
+  const session = await auth()
 
   return (
     <header className="flex justify-between mx-3 items-center py-4 border-b">
@@ -16,11 +19,14 @@ export default function Header() {
         <div className="hidden lg:inline-block">
         <ModeToggle />
         </div>
-        <div className="hidden lg:inline-block">
-
-        <AddPost/>
-        </div>
-        <SignIn />
+        {session?.user ? (
+          <AddPost />
+        ) : (
+          <div>
+            <SignIn />
+          </div>
+        )}
+       
       </div>
 
     </header>

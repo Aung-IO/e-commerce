@@ -26,11 +26,11 @@ export default function Home() {
           <div className="flex flex-col items-center gap-4">
             <div className="flex gap-2 ">
               <Button>
-                Get Started
+               <Link href={'/inspiration'}> Get Started</Link>
               </Button>
-              <Button className="button-outline">
+              <div className="mt-1 ml-2">
                 <Link href={'https://nextjs.org/'}>Learn Next.js</Link>
-              </Button>
+              </div>
             </div>
 
             <span className="text-sm typewriter ">

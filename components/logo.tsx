@@ -7,7 +7,7 @@ export default function Logo() {
     const { resolvedTheme } = useTheme();
   return (
     <div>
-        <Link href={"/inspiration"} className="flex items-center">
+        <Link href={"/"} className="flex items-center">
           <Image
             src={
               resolvedTheme === "dark" || !resolvedTheme
