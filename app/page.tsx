@@ -15,15 +15,15 @@ export default function Home() {
         {/* Hero */}
         <div className="flex flex-col lg:flex-row gap-5 pt-4 max-w-[1000px] items-center justify-center">
           <div>
-            <span className="text-left text-lg text-wrap">
+            <span className="text-left text-md lg:text-lg text-wrap">
               <span>Unleash Your Code, Share Your Craft. </span>
-              <span className="text-gray-500">
+              <span className="text-gray-500 text-sm lg:text-lg">
                 Whether you're a seasoned coder or just starting out,
                 showcase your creations, inspire others, and explore the innovations of fellow developers.
               </span>
             </span>
           </div>
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex flex-col items-center gap-4">
             <div className="flex gap-2 ">
               <Button>
                 Get Started
@@ -33,7 +33,7 @@ export default function Home() {
               </Button>
             </div>
 
-            <span className="text-sm typewriter">
+            <span className="text-sm typewriter ">
               Code, Deploy, Showcase – Repeat
             </span>
           </div>

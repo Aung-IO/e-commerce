@@ -14,8 +14,9 @@ export default async function SignIn() {
             }}
         >
             {session?.user ? (
-                <div className="flex items-center gap-x-2">
-                    <Image src={session?.user?.image ?? ""} alt="profile" width={30} height={30} className="rounded-full" />
+                <div className="flex items-center ">
+                    <Image src={session?.user?.image ?? ""} alt="profile" 
+                    width={30} height={30} className="rounded-full mr-4" />
 
                 </div>
             ) : (

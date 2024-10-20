@@ -9,7 +9,7 @@ import SignIn from "./sign-in";
 export default function Header() {
 
   return (
-    <header className="flex justify-between items-center px-3 lg:px-14 py-4 border-b">
+    <header className="flex justify-between mx-3 items-center py-4 border-b">
       <Logo />
       <NavLinks />
       <div className="flex items-center gap-5">
