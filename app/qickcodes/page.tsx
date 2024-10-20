@@ -1,7 +1,9 @@
-import React from 'react'
+import CaptureScreenshot from '@/componentscapture-screenshot'
 
 export default function page() {
   return (
-    <div>Qickcodes</div>
+    <div>
+      <CaptureScreenshot/>
+    </div>
   )
 }

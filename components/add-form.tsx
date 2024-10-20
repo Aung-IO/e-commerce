@@ -3,9 +3,8 @@ import { Button } from "./ui/button"
 
 
 type Inputs = {
-    imageUrl: string
-    projectUrl: string
     projectName: string
+    projectUrl: string
     githubLink: string
 }
 
@@ -14,14 +13,11 @@ export default function AddForm() {
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
     } = useForm<Inputs>()
     const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
 
-
-    console.log(watch("projectName")) // watch input value by passing the name of it
-
+    
 
     return (
         /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
@@ -32,13 +28,13 @@ export default function AddForm() {
             <input className="border border-1" {...register("projectName", { required: true })} />
             {/* errors will return when field validation fails  */}
             {errors.projectName && <span>This field is required</span>}
-            <label>Add your deployed project link</label>
 
+            <label>Add Project URl</label>
             <input className="border border-1" {...register("projectUrl", { required: true })} />
             {/* errors will return when field validation fails  */}
             {errors.projectUrl && <span>This field is required</span>}
-            <label>Add github link</label>
 
+            <label>Add Github Link</label>
             <input className="border border-1" {...register("githubLink", { required: true })} />
             {/* errors will return when field validation fails  */}
             {errors.githubLink && <span>This field is required</span>}
