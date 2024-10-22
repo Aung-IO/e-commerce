@@ -6,6 +6,8 @@ import Logo from "./logo";
 import { ModeToggle } from "./mode-toggle";
 import NavLinks from "./nav-links";
 import SignIn from "./sign-in";
+import Image from "next/image";
+import { SignOut } from "./sign-out";
 
 export default async function Header() {
 
@@ -20,7 +22,10 @@ export default async function Header() {
         <ModeToggle />
         </div>
         {session?.user ? (
-          <AddPost />
+          <div className="flex flex-row gap-3">
+            <SignOut />
+            <Image src={session.user.image} alt="user iamge" width={40} height={40} className="rounded-full"></Image>
+             </div>
         ) : (
           <div>
             <SignIn />

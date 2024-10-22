@@ -12,7 +12,8 @@ const nextConfig = {
                 hostname: 'unsplash.com',
             }
         ]
-    }
+    },
 };
+
 
 export default nextConfig;
