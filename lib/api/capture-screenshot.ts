@@ -11,5 +11,5 @@ export async function captureScreenshotFromAPI(url : string) {
     });
 
     const data = await response.json();
-    return {data, ok: response.ok}
+    return {data, ok: response.ok} 
 }

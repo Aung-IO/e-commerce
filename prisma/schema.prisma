@@ -34,10 +34,8 @@ model Card {
   projectName     String   // Project name
   githubUrl      String  // Optional GitHub source code link
   projectUrl    String  // Optional deployed project link
-
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
-
   userId    String   @db.ObjectId
   user      User     @relation(fields: [userId], references: [id])
 }

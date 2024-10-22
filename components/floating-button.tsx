@@ -1,6 +1,4 @@
-import React from 'react'
-import { Button } from './ui/button'
-import AddPost from './add-post'
+import AddPost from './create-post-button'
 
 export default function FloatingButton() {
   return (

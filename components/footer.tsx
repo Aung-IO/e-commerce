@@ -1,4 +1,3 @@
-import AddPost from "./add-post";
 
 export default function Footer() {
   return (

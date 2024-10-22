@@ -1,12 +1,11 @@
 
 
 import { auth } from "@/auth";
-import AddPost from "./add-post";
+import CreatePostButton from "./create-post-button";
 import Logo from "./logo";
 import { ModeToggle } from "./mode-toggle";
 import NavLinks from "./nav-links";
 import SignIn from "./sign-in";
-import Image from "next/image";
 import { SignOut } from "./sign-out";
 
 export default async function Header() {
@@ -25,8 +24,11 @@ export default async function Header() {
         </div>
         {session?.user ? (
           <div className="flex flex-row gap-3">
-            <AddPost/>
-            <Image src={session.user.image} alt="user iamge" width={40} height={40} className="rounded-full"></Image>
+            <div className="hidden lg:inline-block">
+            <CreatePostButton/>
+            </div>
+            <SignOut/>
+            {/* <Image src={session.user.image} alt="user iamge" width={40} height={40} className="rounded-full"></Image> */}
              </div>
         ) : (
           <div>
