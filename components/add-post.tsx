@@ -24,7 +24,7 @@ export default function AddPost() {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button variant="outline">
+        <Button variant="outline" className="button">
           <span className="lg:hidden">+</span>
           <span className="hidden lg:inline-block">Create Post</span>
         </Button>

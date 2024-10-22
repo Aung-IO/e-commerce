@@ -5,7 +5,7 @@ import { Button } from "./ui/button"
 type Inputs = {
     projectName: string
     projectUrl: string
-    githubLink: string
+    githubUrl: string
 }
 
 
@@ -35,9 +35,9 @@ export default function AddForm() {
             {errors.projectUrl && <span>This field is required</span>}
 
             <label>Add Github Link</label>
-            <input className="border border-1" {...register("githubLink", { required: true })} />
+            <input className="border border-1" {...register("githubUrl", { required: true })} />
             {/* errors will return when field validation fails  */}
-            {errors.githubLink && <span>This field is required</span>}
+            {errors.githubUrl && <span>This field is required</span>}
 
 
 
