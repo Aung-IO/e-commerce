@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 
+
 const prisma = new PrismaClient();
 
 export async function POST(request: Request) {
@@ -21,9 +22,12 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json(card, { status: 201 });
+    
   } catch (error) {
     console.error('Error creating card:', error);
     return NextResponse.json({ error: 'Failed to create card' }, { status: 500 });
   }
+
+  
 }
 

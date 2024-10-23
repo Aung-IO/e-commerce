@@ -1,3 +1,4 @@
+"use client"
 import { Button } from "@/components/ui/button"
 import {
   Drawer,
@@ -5,17 +6,17 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer"
 
-import CreateCardForm from "./create-card-form"
-import { auth } from "@/auth"
 import { SessionProvider } from "next-auth/react"
+import { useState } from "react"
+import CreateCardForm from "./create-card-form"
 
 
-export default async function CreatePostButton() {
-  const session = await auth()
+export default function CreatePostButton() {
+  const [open, setOpen] = useState(false)
 
   return (
     <SessionProvider>
-    <Drawer>
+    <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
         <Button variant="outline" className="button">
           <span className="lg:hidden">+</span>
@@ -25,7 +26,7 @@ export default async function CreatePostButton() {
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm">
           <div className="p-4 pb-0">
-            <CreateCardForm/>
+            <CreateCardForm setOpen={setOpen} />
           </div>
         </div>
       </DrawerContent>

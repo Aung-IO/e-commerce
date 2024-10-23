@@ -1,9 +1,10 @@
 "use client"
 
-import { useSession } from "next-auth/react"
-import { SubmitHandler, useForm } from "react-hook-form"
-import { Button } from "./ui/button"
-import axios from "axios"
+import axios from "axios";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { Button } from "./ui/button";
 
 type Inputs = {
   projectName: string
@@ -12,30 +13,31 @@ type Inputs = {
 }
 
 
-export default function CreateCardForm() {
+export default function CreateCardForm({setOpen} : {setOpen: (value: boolean) => void}) {
   const { data: session } = useSession()
   const userId = session?.user?.id
- 
+  const router = useRouter()
+
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting,   },
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
-      const response = await axios.post("/api/card", {
+        await axios.post("/api/card", {
         projectName: data.projectName,
         projectUrl: data.projectUrl,
         githubUrl: data.githubUrl,
         userId: userId,
       });
 
-      console.log("Created", response);
-
     } catch (error) {
       console.log("Error creating card:", error);
 
     }
+    setOpen(false)
+    router.refresh()
   };
 
 
@@ -61,7 +63,7 @@ export default function CreateCardForm() {
 
 
 
-      <Button type="submit" >Create</Button>
+      <Button type="submit" >{isSubmitting ? "Creating" : "Create"}</Button>
     </form>
   )
 }
