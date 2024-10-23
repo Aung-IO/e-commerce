@@ -10,6 +10,10 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'unsplash.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'iad.microlink.io'
             }
         ]
     },

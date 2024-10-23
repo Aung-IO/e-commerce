@@ -12,6 +12,7 @@ export async function POST(request: Request) {
     // Use Microlink to capture the screenshot of the provided URL
     const { status, data } = await microlink(url, {
       screenshot: true,
+      
     });
 
     if (status === "success") {

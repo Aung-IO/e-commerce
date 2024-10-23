@@ -1,4 +1,5 @@
 import { prisma } from '@/db'
+import CardLayout from './card-layout'
 import ProjectCard from './project-card'
 
 export default async function CardList() {
@@ -12,18 +13,18 @@ export default async function CardList() {
         }
     })
     return (
-        <div>
+        <CardLayout >
             {data.map((card) => (
                 <div key={card.id} >
                    <ProjectCard
                    projectName={card.projectName}
                    githubUrl={card.githubUrl}
-                   projectUrl={card}
-                   user={card.user.name}
+                   projectUrl={card.projectUrl}
+                   user={card.user!.name!}
                    
                    />
                 </div>
             ))}
-        </div>
+        </CardLayout>
     )
 }
