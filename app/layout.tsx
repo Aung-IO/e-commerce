@@ -1,7 +1,7 @@
-import Container from "@/components/container";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
-import { ThemeProvider } from "@/components/theme-provider";
+import Footer from "@/components/common/footer";
+import Header from "@/components/common/header";
+import RootLayoutContainer from "@/componentslayout/root-layout-container";
+import { ThemeProvider } from "@/componentslayout/theme-provider";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -42,9 +42,9 @@ export default function RootLayout({
         >
 
           <Header />
-          <Container>
+          <RootLayoutContainer>
             {children}
-          </Container>
+          </RootLayoutContainer>
           <Footer />
         </ThemeProvider>
       </body>

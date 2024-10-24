@@ -4,7 +4,7 @@ import axios from "axios";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Button } from "./ui/button";
+import { Button } from "../../../components/ui/button";
 
 type Inputs = {
   projectName: string

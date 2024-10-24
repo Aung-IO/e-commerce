@@ -1,5 +1,5 @@
-import CardList from '@/componentscard-list'
-import FloatingButton from '@/componentsfloating-button'
+import FloatingButton from '@/components/common/floating-button'
+import CardList from '@/feature/inspiration/pages/card-list'
 
 export default function page() {
   return (

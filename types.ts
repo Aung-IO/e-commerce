@@ -1,6 +1,8 @@
+
 type ProjectCardProps = {
     projectName: string;
     githubUrl: string;
     projectUrl: string;
-    user: string;
+    username: string;
+    userprofile: string;
   };

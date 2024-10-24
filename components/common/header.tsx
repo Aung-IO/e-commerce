@@ -1,6 +1,6 @@
 import { auth } from "@/auth";
 import Image from "next/image";
-import CreatePostButton from "./create-post-button";
+import CreatePostButton from "../../feature/inspiration/components/create-post-button";
 import Logo from "./logo";
 import { ModeToggle } from "./mode-toggle";
 import NavLinks from "./nav-links";
@@ -16,7 +16,7 @@ export default async function Header() {
       <NavLinks />
 
       <div className="flex items-center gap-5">
-        <div className="hidden lg:inline-block">
+        <div>
           <ModeToggle />
 
         </div>

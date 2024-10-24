@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Logo() {
-    const { resolvedTheme } = useTheme();
+    const { resolvedTheme } = useTheme(); 
   return (
     <div>
         <Link href={"/"} className="flex items-center">
