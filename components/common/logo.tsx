@@ -1,4 +1,6 @@
 "use client";
+import LogoDark from "@/public/icons/logo_dark.svg";
+import LogoLight from "@/public/icons/logo_light.svg";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,8 +13,8 @@ export default function Logo() {
           <Image
             src={
               resolvedTheme === "dark" || !resolvedTheme
-                ? "/logo_light.svg"
-                : "/logo_dark.svg"
+                ? LogoLight
+                : LogoDark
             }
             alt="logo"
             className="w-[35px] h-[35px]"

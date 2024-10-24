@@ -1,7 +1,8 @@
 import { Button } from '@/components/ui/button';
+import GithubLight from "@/public/icons/github-mark-white.svg";
+import GithubDark from "@/public/icons/github-mark.svg";
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
-
 
 export default function RepoButton() {
     const { resolvedTheme } = useTheme(); 
@@ -10,8 +11,8 @@ export default function RepoButton() {
           <Image
             src={
               resolvedTheme === "dark" || !resolvedTheme
-                ?  "/github-mark.svg"
-                :  "/github-mark-white.svg"
+                ?  GithubDark
+                :  GithubLight
             }
             alt="github-icon"
             width={20}

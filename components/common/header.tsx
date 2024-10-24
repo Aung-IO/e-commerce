@@ -1,5 +1,6 @@
 import { auth } from "@/auth";
 import Image from "next/image";
+import Link from "next/link";
 import CreatePostButton from "../../feature/inspiration/components/create-post-button";
 import Logo from "./logo";
 import { ModeToggle } from "./mode-toggle";
@@ -25,12 +26,16 @@ export default async function Header() {
             <div className="hidden lg:inline-block">
               <CreatePostButton />
             </div>
-            {/* <SignOut/> */}
-            <Image src={session.user.image!} alt="user iamge" width={40} height={40} className="rounded-full"></Image>
+         
+            <Link href={"/profile"}>
+              <Image src={session.user.image!} alt="user iamge" width={40} height={40} className="rounded-full"></Image>
+            </Link>
           </div>
         ) : (
           <div>
+
             <SignIn />
+
           </div>
         )}
 
