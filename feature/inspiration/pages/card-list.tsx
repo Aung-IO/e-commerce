@@ -2,12 +2,13 @@
 import CardLayout from '@/components/layout/card-layout'
 import SingleCard from '../components/single-card'
 import { fetchCardData } from '../hooks/fetchCardData'
+import { auth } from '@/auth'
 
 
 export default async function CardList() {
     const data = await fetchCardData()
-//    const session = await auth()
-//    const loggedInUserId = session?.user?.id;
+  const session = await auth()
+  const loggedInUserId = session?.user?.id;
     
     return (
 
@@ -23,7 +24,7 @@ export default async function CardList() {
                       userprofile={card.user.image!}
                       ownerId={card.userId}
                       cardId={card.cardId}
-                    //   loggedInUserId={loggedInUserId!}
+                      loggedInUserId={loggedInUserId!}
                         
 
                     />

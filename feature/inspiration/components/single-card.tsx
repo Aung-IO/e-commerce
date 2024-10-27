@@ -14,6 +14,7 @@ interface SingleCardProps {
   username: string;
   cardId: string;
   ownerId: string; // User ID of the card owner
+  loggedInUserId: string; // User ID of the logged-in user
 
 
 }
@@ -25,6 +26,8 @@ export default function SingleCard({ projectName,
   userprofile,
   username,
   cardId,
+  loggedInUserId,
+  ownerId
 
 }: SingleCardProps) {
 
@@ -63,8 +66,8 @@ export default function SingleCard({ projectName,
           </Link>
 
 
+          {loggedInUserId === ownerId ? <DeleteButton cardId={cardId} /> : ""}
 
-          <DeleteButton cardId={cardId} />
 
         </div>
 
