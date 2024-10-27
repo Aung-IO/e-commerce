@@ -1,5 +1,5 @@
 "use client"
-import DummyImage from '@/public/images/dummyImage.jpg';
+import Loading from '@/componentscommon/loading';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useScreenshot } from '../hooks/fetchScreenshot';
@@ -38,19 +38,13 @@ export default function SingleCard({ projectName,
 
 
   return (
-    <div className="max-w-sm w-full lg:max-w-[380px] lg:flex flex-col" >
+    <div className='lg:flex flex-col max-w-[450px]'>
 
-      <div className="relative max-w-[450px] max-h-[300px]">
+      <div>
         <Link href={projectUrl} target="_blank" rel="view_source_code">
-          <Image
-            src={screenshot || DummyImage}
-            alt={`${projectName} image`}
-            className="w-full h-full object-cover" // Ensures both images cover the container equally
-            width={450}
-            height={300}
-            placeholder="blur" // Optional: show a blur while loading
-            blurDataURL={screenshot || "null"} // Optional: display DummyImage as the blur placeholder
-          />
+          {screenshot ? <Image src={screenshot} alt={`${projectName} screenshot`} className="rounded-lg" width={450} height={300} /> 
+          : <Loading/>}
+         
         </Link>
       </div>
 

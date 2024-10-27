@@ -13,8 +13,8 @@ export async function fetchUserWithCard(userId : string) {
   });
 
   return {
-    username: user?.name || null,
-    profileImage: user?.image || null,
+    username: user?.name,
+    profileImage: user?.image,
     cards: user?.cards || [],
   }; 
 
