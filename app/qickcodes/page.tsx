@@ -1,15 +1,10 @@
 
-import CaptureScreenshot from '@/componentscapture-screenshot'
 
 export default function page() {
- 
- 
 
   return (
-    <div>
-    
-    
-      <CaptureScreenshot/>
+    <div className='flex items-center justify-center h-screen'>
+      Under development. Please come back later.
     </div>
   )
 }

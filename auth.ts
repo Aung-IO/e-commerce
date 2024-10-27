@@ -19,14 +19,13 @@ export const {
 
   })],
   callbacks: {
-    async session({ session, token, user }) {
+    async session({ session, token }) {
       // Attach user ID (from JWT or database) to the session
-      if (token) {
+      if (token && token.sub) {
         session.user.id = token.sub; // This will set the userId in the session
       }
       return session;
-    },
-    async jwt({ token, account, user }) {
+    },    async jwt({ token, account }) {
       if (account) {
         token.accessToken = account.access_token;
       }
