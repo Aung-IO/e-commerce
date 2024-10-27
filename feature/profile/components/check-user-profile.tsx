@@ -1,6 +1,6 @@
 import { auth } from "@/auth";
 import { redirect } from 'next/navigation';
-import UserDetail from "./user-detail";
+import UserDetail from "../../inspiration/components/user-detail";
 
 
 export default async function CheckUserProfile() {

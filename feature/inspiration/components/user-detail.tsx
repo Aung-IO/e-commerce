@@ -1,7 +1,7 @@
 import { auth } from "@/auth"
-import { fetchUserWithCard } from "../hooks/fetch-user-with-card"
-import SingleCard from "@/feature/inspiration/components/single-card"
 import CardLayout from "@/componentslayout/card-layout"
+import SingleCard from "@/feature/inspiration/components/single-card"
+import { fetchUserWithCard } from "../hooks/fetch-user-with-card"
 
 
 
@@ -21,7 +21,7 @@ export default async function UserDetail() {
         projectUrl={card.projectUrl}
         username={username!}  
         userprofile={profileImage!} 
-        userId={userId}
+        ownerId={card.userId}
         cardId={card.id}
       />
     ))}
