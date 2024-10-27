@@ -16,7 +16,6 @@ model User {
   id            String          @id @default(auto()) @map("_id") @db.ObjectId
   name          String?
   email         String?         @unique
-  role          UserRole?       @default(ADMIN)
   emailVerified DateTime?
   image         String?
   accounts      Account[]
@@ -30,7 +29,8 @@ model User {
 }
 
 model Card {
-  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  id        String  @id @default(auto())  @map("_id") @db.ObjectId
+  cardId    String @unique @default(uuid())
   projectName     String   // Project name
   githubUrl      String  // Optional GitHub source code link
   projectUrl    String  // Optional deployed project link

@@ -2,6 +2,7 @@ import Footer from "@/components/common/footer";
 import Header from "@/components/common/header";
 import RootLayoutContainer from "@/componentslayout/root-layout-container";
 import { ThemeProvider } from "@/componentslayout/theme-provider";
+import { Toaster } from "@/components/ui/toaster"
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   title: "CodeDam",
   description: "Show your awesome projects",
 
- 
+
 };
 
 export default function RootLayout({
@@ -43,7 +44,11 @@ export default function RootLayout({
 
           <Header />
           <RootLayoutContainer>
-            {children}
+            <main>
+
+              {children}
+            </main>
+            <Toaster />
           </RootLayoutContainer>
           <Footer />
         </ThemeProvider>

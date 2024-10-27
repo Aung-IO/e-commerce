@@ -5,4 +5,7 @@ type ProjectCardProps = {
     projectUrl: string;
     username: string;
     userprofile: string;
+    userId? : string;
+    cardId? : string
+    loggedInUserId?: string;
   };

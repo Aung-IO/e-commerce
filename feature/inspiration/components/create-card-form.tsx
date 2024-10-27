@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "../../../components/ui/button";
+import { useToast } from "@/hooks/use-toast"
 
 type Inputs = {
   projectName: string
@@ -14,6 +15,7 @@ type Inputs = {
 
 
 export default function CreateCardForm({setOpen} : {setOpen: (value: boolean) => void}) {
+  const { toast } = useToast()
   const { data: session } = useSession()
   const userId = session?.user?.id
   const router = useRouter()
@@ -31,12 +33,12 @@ export default function CreateCardForm({setOpen} : {setOpen: (value: boolean) =>
         githubUrl: data.githubUrl,
         userId: userId,
       });
-
-    } catch (error) {
+} catch (error) {
       console.log("Error creating card:", error);
 
     }
     setOpen(false)
+    router.replace("/inspiration")
     router.refresh()
   };
 
@@ -63,7 +65,18 @@ export default function CreateCardForm({setOpen} : {setOpen: (value: boolean) =>
 
 
 
-      <Button type="submit" >{isSubmitting ? "Creating" : "Create"}</Button>
+      <Button
+      type="submit"
+      variant="outline"
+      onClick={() => {
+        toast({
+          title: "Card created!",
+          description: "Your card will be appearing soon.",
+        })
+      }}
+    >
+      {isSubmitting ? "Creating..." : "Create"}
+    </Button>
     </form>
   )
 }

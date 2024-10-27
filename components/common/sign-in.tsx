@@ -4,7 +4,6 @@ import Image from "next/image";
 
 export default async function SignIn() {
     const session = await auth()
-    if (session?.user) console.log(session);
 
     return (
         <form
